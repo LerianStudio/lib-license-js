@@ -1,3 +1,19 @@
+## [v1.1.0-beta.1] - 2025-07-03
+
+This release introduces a powerful new library for managing licenses, enhancing both backend and frontend capabilities, and significantly improving documentation and testing coverage.
+
+### ✨ Features  
+- **Unified License Management**: A new JavaScript library has been introduced to streamline license management across services. This feature simplifies handling licenses, ensuring consistency and efficiency in both backend and frontend operations. Developers can now manage licenses more effectively with comprehensive documentation and robust testing to support integration.
+
+### 📚 Documentation
+- **Expanded Guidance**: The documentation has been thoroughly updated to include detailed instructions and practical examples for using the new license management library. This enhancement aims to make it easier for developers to adopt and integrate the new functionality seamlessly.
+
+### 🔧 Maintenance
+- **Codebase Optimization**: Significant refactoring has resulted in a cleaner codebase, reducing complexity by 177 lines. This optimization improves maintainability and readability, making it easier for developers to work with the system.
+- **Enhanced Testing**: Test coverage has been expanded to include new scenarios, ensuring the reliability and correctness of the license management library. This reduces the risk of future issues, providing a more stable user experience.
+
+This changelog provides a clear and concise overview of the latest release, focusing on user benefits and practical applications of the new features and improvements.
+
 # [1.2.0](https://github.com/LerianStudio/lib-js-boilerplate/compare/v1.1.2...v1.2.0) (2025-06-09)
 
 
