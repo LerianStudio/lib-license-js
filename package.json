@@ -1,7 +1,7 @@
 {
-  "name": "@lerianstudio/lib-js-boilerplate",
-  "version": "1.2.0",
-  "description": "Boilerplate for JavaScript libraries with modern tooling and project structure.\nIncludes linting, testing, bundling, and publishing setup.",
+  "name": "@lerian/lib-license-js",
+  "version": "1.0.0",
+  "description": "A lightweight TypeScript SDK for validating plugin licenses against the Lerian backend. Provides middleware for Express and Fastify with caching and background refresh.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LerianStudio/lib-js-boilerplate.git"
+    "url": "git+https://github.com/LerianStudio/lib-license-js.git"
   },
   "author": {
     "name": "Lerian Studio",
@@ -27,6 +27,10 @@
     "url": "https://lerian.studio"
   },
   "license": "ISC",
+  "dependencies": {
+    "@lerianstudio/lib-commons-js": "^1.6.0-beta.2",
+    "node-cache": "^5.1.2"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.28.0",
