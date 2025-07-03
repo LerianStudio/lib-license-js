@@ -1,3 +1,18 @@
+## [v1.1.0-beta.3] - 2025-07-03
+
+This release brings clarity and consistency to the library's identity, enhancing user experience and ensuring up-to-date documentation.
+
+### ✨ Features  
+- **Improved Library Identification**: The library name in `package.json` has been updated to better reflect its functionality and usage. This change helps users and developers quickly identify the library's purpose, ensuring consistency across documentation and code references. This enhancement is part of our ongoing efforts to improve clarity and usability.
+
+### 📚 Documentation
+- **Updated Changelog**: The changelog has been updated to include recent changes and improvements. This ensures users have access to the latest information about updates, new features, and any important notes about the library's development. Keeping the changelog current is crucial for transparency and helps users stay informed about the project's evolution.
+
+### 🔧 Maintenance
+- **General Maintenance**: Routine updates have been made to ensure the library remains up-to-date and continues to function smoothly. These behind-the-scenes improvements support the overall reliability and performance of the library.
+
+This update focuses on enhancing the user experience by improving clarity and maintaining comprehensive documentation. There are no breaking changes in this release, ensuring a smooth transition for users upgrading to this version.
+
 ## [v1.1.0-beta.2] - 2025-07-03
 
 This release of `lib-license-js` introduces powerful new features for managing license versions, enhancing flexibility and control for users. Additionally, documentation updates ensure users have access to the latest project information.
