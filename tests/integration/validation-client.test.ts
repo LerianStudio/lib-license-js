@@ -158,7 +158,7 @@ describe('ValidationClient', () => {
       expect(mockApiClient.validateLicense).toHaveBeenCalledWith({
         applicationName: 'test-app',
         licenseKey: 'test-license-key',
-        organizationId: 'test-org-id',
+        organizationIds: 'test-org-id',
         fingerprint: 'test-fingerprint',
       });
     });
@@ -361,7 +361,7 @@ describe('ValidationClient', () => {
       expect(config).toEqual({
         applicationName: 'test-app',
         licenseKey: 'test-license-key',
-        organizationId: 'test-org-id',
+        organizationIds: 'test-org-id',
         fingerprint: 'test-fingerprint',
       });
 
