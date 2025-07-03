@@ -19,21 +19,19 @@ plugins:
       - type: test
         release: patch
       - type: fix
-        release: patch # to hotfix scenarios
+        release: patch
       - type: refactor
         release: minor
       - type: docs
         release: patch
       - breaking: true
         release: major
-        
-  # Plugin to version the CHANGELOG.md
+
   - path: "@semantic-release/git"
     assets:
       - CHANGELOG.md
     message: "chore(release): ${nextRelease.version}\n\nChangelog atualizado."
 
-  # Plugin to publish the CHANGELOG.md as an asset in the GitHub release
   - path: "@semantic-release/github"
     assets:
       - path: CHANGELOG.md
@@ -41,20 +39,20 @@ plugins:
     successComment: false
     failComment: false
     labels: []
-  
- # Plugin to perform the backmerge between the 'main' and 'develop' branches
-  # - path: "@saithodev/semantic-release-backmerge"
-  #   backmergeBranches:
-  #     - from: main
-  #       to: develop
-  #   message: "chore(release): Preparations for next release [skip ci]"
 
   - path: "@semantic-release/exec"
 
+  - path: "@saithodev/semantic-release-backmerge"
+    backmergeBranches:
+      - from: main
+        to: develop
+    strategy: merge
+    message: "chore(release): Preparations for next release [skip ci]"
+
 branches:
-  - main
+  - name: main
   - name: develop
     prerelease: beta
-  - name: hotfix/MIDAZ-997
+  - name: hotfix/*
     prerelease: false
     channel: false

@@ -8,6 +8,16 @@ on:
       - feature/**
       - release/**
       - hotfix/**
+      - feat/**
+    paths-ignore:
+      - '.gitignore'
+      - '**/*.env'   # Ignores all .env files
+      - '*.env'      # Ignores .env files in the root directory
+      - '**/*.md'    # Ignores all .md files
+      - '*.md'       # Ignores .md files in the root directory
+      - '**/*.txt'   # Ignores all .env files
+      - '*.txt'      # Ignores .env files in the root directory
+    tags-ignore: ['**']
 
 permissions:
   id-token: write
@@ -68,13 +78,21 @@ jobs:
 
       - name: Build package
         run: npm run build
+      
+       # Install semantic-release plugins
+      - name: Install missing plugin @semantic-release/exec
+        run: npm install --save-dev @semantic-release/exec
 
       - name: Run Semantic Release
         uses: cycjimmy/semantic-release-action@v4
         with:
-          semantic_version: 24.2.3
+          ci: false
+          config_file: .releaserc.yml
+          semantic_version: 23.0.8
           extra_plugins: |
             conventional-changelog-conventionalcommits@v7.0.2
+            @saithodev/semantic-release-backmerge
+            @semantic-release/git
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
