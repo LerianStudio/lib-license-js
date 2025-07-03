@@ -28,7 +28,7 @@ export class ValidationClient {
     this.config = {
       applicationName: appId,
       licenseKey,
-      organizationId: orgId,
+      organizationIds: orgId,
       fingerprint: Utils.generateFingerprint(appId, licenseKey, orgId),
     };
 

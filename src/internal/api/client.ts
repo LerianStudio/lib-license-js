@@ -83,7 +83,7 @@ export class ApiClient {
     };
 
     const headers = {
-      'x-api-key': config.organizationId,
+      'x-api-key': config.organizationIds,
     };
 
     return this.executeWithRetry(async () => {

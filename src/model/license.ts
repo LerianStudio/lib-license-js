@@ -6,7 +6,7 @@
 export interface Config {
   applicationName: string;
   licenseKey: string;
-  organizationId: string;
+  organizationIds: string;
   fingerprint: string;
 }
 

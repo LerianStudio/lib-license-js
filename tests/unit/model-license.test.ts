@@ -10,13 +10,13 @@ describe('License Model Types', () => {
       const config: Config = {
         applicationName: 'test-app',
         licenseKey: 'test-license-key',
-        organizationId: 'test-org-id',
+        organizationIds: 'test-org-id',
         fingerprint: 'test-fingerprint',
       };
 
       expect(config.applicationName).toBe('test-app');
       expect(config.licenseKey).toBe('test-license-key');
-      expect(config.organizationId).toBe('test-org-id');
+      expect(config.organizationIds).toBe('test-org-id');
       expect(config.fingerprint).toBe('test-fingerprint');
     });
   });
@@ -105,14 +105,14 @@ describe('License Model Types', () => {
       const config: Config = {
         applicationName: 'app',
         licenseKey: 'key',
-        organizationId: 'org',
+        organizationIds: 'org',
         fingerprint: 'fp',
       };
 
       // All properties should be strings
       expect(typeof config.applicationName).toBe('string');
       expect(typeof config.licenseKey).toBe('string');
-      expect(typeof config.organizationId).toBe('string');
+      expect(typeof config.organizationIds).toBe('string');
       expect(typeof config.fingerprint).toBe('string');
     });
 
