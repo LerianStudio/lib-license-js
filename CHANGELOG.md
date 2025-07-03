@@ -1,3 +1,19 @@
+## [v1.1.0-beta.2] - 2025-07-03
+
+This release of `lib-license-js` introduces powerful new features for managing license versions, enhancing flexibility and control for users. Additionally, documentation updates ensure users have access to the latest project information.
+
+### ✨ Features  
+- **License Management Enhancements**: You can now create and manage license versions directly within the plugin license system. This streamlines the process of updating and tracking licenses, reducing manual effort and ensuring compliance as your projects evolve.
+
+### 📚 Documentation
+- **Changelog Updates**: The changelog has been updated to reflect the latest changes and improvements, keeping you informed about new features and enhancements in the project.
+
+### 🔧 Maintenance
+- **Documentation Maintenance**: Regular updates to project documentation ensure clarity and accessibility, helping users stay informed and make the most of new features.
+
+
+This changelog focuses on the user-centric benefits of the new features and documentation updates in `lib-license-js` version 1.1.0. By highlighting the practical applications and improvements, users can easily understand the value of this release.
+
 ## [v1.1.0-beta.1] - 2025-07-03
 
 This release introduces a powerful new library for managing licenses, enhancing both backend and frontend capabilities, and significantly improving documentation and testing coverage.
