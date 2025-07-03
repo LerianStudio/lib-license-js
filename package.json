@@ -1,5 +1,5 @@
 {
-  "name": "@lerian/lib-license-js",
+  "name": "@lerianstudio/lib-license-js",
   "version": "1.0.0",
   "description": "A lightweight TypeScript SDK for validating plugin licenses against the Lerian backend. Provides middleware for Express and Fastify with caching and background refresh.",
   "main": "dist/index.js",
