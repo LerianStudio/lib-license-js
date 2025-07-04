@@ -17,19 +17,19 @@ export class ValidationClient {
   private cacheKey: string;
 
   constructor(
-    appId: string,
+    applicationName: string,
     licenseKey: string,
-    orgId: string,
+    organizationId: string,
     logger: Logger,
     options: Partial<ClientConfig> = {},
   ) {
-    Utils.validateConfig(appId, licenseKey, orgId);
+    Utils.validateConfig(applicationName, licenseKey, organizationId);
 
     this.config = {
-      applicationName: appId,
+      applicationName: applicationName,
       licenseKey,
-      organizationIds: orgId,
-      fingerprint: Utils.generateFingerprint(appId, licenseKey, orgId),
+      organizationIds: organizationId,
+      fingerprint: Utils.generateFingerprint(applicationName, licenseKey, organizationId),
     };
 
     this.logger = logger;
@@ -48,7 +48,7 @@ export class ValidationClient {
     );
 
     this.logger.info(
-      `License validation client initialized for application: ${appId}`,
+      `License validation client initialized for application: ${applicationName}`,
     );
   }
 

@@ -26,9 +26,9 @@ describe('ValidationClient', () => {
   let mockApiClient: jest.Mocked<ApiClient>;
 
   const defaultConfig = {
-    appId: 'test-app',
+    applicationName: 'test-app',
     licenseKey: 'test-license-key',
-    orgId: 'test-org-id',
+    organizationId: 'test-org-id',
   };
 
   beforeEach(() => {
@@ -61,9 +61,9 @@ describe('ValidationClient', () => {
     MockedApiClient.mockImplementation(() => mockApiClient);
 
     validationClient = new ValidationClient(
-      defaultConfig.appId,
+      defaultConfig.applicationName,
       defaultConfig.licenseKey,
-      defaultConfig.orgId,
+      defaultConfig.organizationId,
       mockLogger
     );
   });
@@ -71,17 +71,17 @@ describe('ValidationClient', () => {
   describe('constructor', () => {
     it('should create ValidationClient with valid configuration', () => {
       expect(MockedUtils.validateConfig).toHaveBeenCalledWith(
-        defaultConfig.appId,
+        defaultConfig.applicationName,
         defaultConfig.licenseKey,
-        defaultConfig.orgId
+        defaultConfig.organizationId
       );
       expect(MockedUtils.generateFingerprint).toHaveBeenCalledWith(
-        defaultConfig.appId,
+        defaultConfig.applicationName,
         defaultConfig.licenseKey,
-        defaultConfig.orgId
+        defaultConfig.organizationId
       );
       expect(mockLogger.info).toHaveBeenCalledWith(
-        `License validation client initialized for application: ${defaultConfig.appId}`
+        `License validation client initialized for application: ${defaultConfig.applicationName}`
       );
     });
 
@@ -109,9 +109,9 @@ describe('ValidationClient', () => {
       };
 
       new ValidationClient(
-        defaultConfig.appId,
+        defaultConfig.applicationName,
         defaultConfig.licenseKey,
-        defaultConfig.orgId,
+        defaultConfig.organizationId,
         mockLogger,
         customOptions
       );
