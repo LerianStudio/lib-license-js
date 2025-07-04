@@ -25,9 +25,9 @@ describe('LicenseClient', () => {
   let mockRefreshManager: jest.Mocked<BackgroundRefreshManager>;
 
   const defaultConfig = {
-    appId: 'test-app',
+    applicationName: 'test-app',
     licenseKey: 'test-license-key',
-    orgId: 'test-org-id',
+    organizationId: 'test-org-id',
   };
 
   beforeEach(() => {
@@ -58,9 +58,9 @@ describe('LicenseClient', () => {
     MockedBackgroundRefreshManager.mockImplementation(() => mockRefreshManager);
 
     licenseClient = new LicenseClient(
-      defaultConfig.appId,
+      defaultConfig.applicationName,
       defaultConfig.licenseKey,
-      defaultConfig.orgId,
+      defaultConfig.organizationId,
       mockLogger
     );
   });
@@ -68,9 +68,9 @@ describe('LicenseClient', () => {
   describe('constructor', () => {
     it('should create LicenseClient with default configuration', () => {
       expect(MockedValidationClient).toHaveBeenCalledWith(
-        defaultConfig.appId,
+        defaultConfig.applicationName,
         defaultConfig.licenseKey,
-        defaultConfig.orgId,
+        defaultConfig.organizationId,
         mockLogger,
         {}
       );
@@ -80,7 +80,7 @@ describe('LicenseClient', () => {
         undefined
       );
       expect(mockLogger.info).toHaveBeenCalledWith(
-        `License client created for application: ${defaultConfig.appId}`
+        `License client created for application: ${defaultConfig.applicationName}`
       );
     });
 
@@ -96,17 +96,17 @@ describe('LicenseClient', () => {
       MockedBackgroundRefreshManager.mockClear();
 
       new LicenseClient(
-        defaultConfig.appId,
+        defaultConfig.applicationName,
         defaultConfig.licenseKey,
-        defaultConfig.orgId,
+        defaultConfig.organizationId,
         mockLogger,
         customOptions
       );
 
       expect(MockedValidationClient).toHaveBeenCalledWith(
-        defaultConfig.appId,
+        defaultConfig.applicationName,
         defaultConfig.licenseKey,
-        defaultConfig.orgId,
+        defaultConfig.organizationId,
         mockLogger,
         customOptions
       );
@@ -256,9 +256,9 @@ describe('LicenseClient', () => {
 
     it('should throw error if not initialized', async () => {
       const uninitializedClient = new LicenseClient(
-        defaultConfig.appId,
+        defaultConfig.applicationName,
         defaultConfig.licenseKey,
-        defaultConfig.orgId,
+        defaultConfig.organizationId,
         mockLogger
       );
 

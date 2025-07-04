@@ -12,7 +12,7 @@ describe('Utils', () => {
       }).not.toThrow();
     });
 
-    it('should throw error for empty appId', () => {
+    it('should throw error for empty applicationName', () => {
       expect(() => {
         Utils.validateConfig('', 'valid-license-key', 'org-123');
       }).toThrow('Application ID must be a non-empty string');
@@ -24,7 +24,7 @@ describe('Utils', () => {
       }).toThrow('License key must be a non-empty string');
     });
 
-    it('should throw error for empty orgId', () => {
+    it('should throw error for empty organizationId', () => {
       expect(() => {
         Utils.validateConfig('test-app', 'valid-license-key', '');
       }).toThrow('Organization ID must be a non-empty string');

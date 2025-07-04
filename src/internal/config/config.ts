@@ -4,9 +4,9 @@
  */
 
 export interface ClientConfig {
-  appId: string;
+  applicationName: string;
   licenseKey: string;
-  orgId: string;
+  organizationId: string;
   baseUrl?: string;
   timeout?: number;
   refreshInterval?: number;

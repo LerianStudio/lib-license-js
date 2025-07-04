@@ -13,17 +13,17 @@ export class LicenseClient {
   private isInitialized: boolean = false;
 
   constructor(
-    appId: string,
+    applicationName: string,
     licenseKey: string,
-    orgId: string,
+    organizationId: string,
     logger: Logger,
     options: Partial<ClientConfig> = {},
   ) {
     this.logger = logger;
     this.validationClient = new ValidationClient(
-      appId,
+      applicationName,
       licenseKey,
-      orgId,
+      organizationId,
       logger,
       options,
     );
@@ -34,7 +34,7 @@ export class LicenseClient {
     );
 
     this.terminationHandler = this.createDefaultTerminationHandler();
-    this.logger.info(`License client created for application: ${appId}`);
+    this.logger.info(`License client created for application: ${applicationName}`);
   }
 
   async initialize(): Promise<void> {

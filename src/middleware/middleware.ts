@@ -102,42 +102,42 @@ export class LicenseMiddleware {
 }
 
 export function createLicenseMiddleware(
-  appId: string,
+  applicationName: string,
   licenseKey: string,
-  orgId: string,
+  organizationId: string,
   logger: Logger,
 ): LicenseMiddleware {
-  const licenseClient = new LicenseClient(appId, licenseKey, orgId, logger);
+  const licenseClient = new LicenseClient(applicationName, licenseKey, organizationId, logger);
 
   return new LicenseMiddleware(licenseClient, logger);
 }
 
 export function createExpressMiddleware(
-  appId: string,
+  applicationName: string,
   licenseKey: string,
-  orgId: string,
+  organizationId: string,
   logger: Logger,
 ): MiddlewareFunction {
-  const middleware = createLicenseMiddleware(appId, licenseKey, orgId, logger);
+  const middleware = createLicenseMiddleware(applicationName, licenseKey, organizationId, logger);
   return middleware.express();
 }
 
 export function createFastifyMiddleware(
-  appId: string,
+  applicationName: string,
   licenseKey: string,
-  orgId: string,
+  organizationId: string,
   logger: Logger,
 ): MiddlewareFunction {
-  const middleware = createLicenseMiddleware(appId, licenseKey, orgId, logger);
+  const middleware = createLicenseMiddleware(applicationName, licenseKey, organizationId, logger);
   return middleware.fastify();
 }
 
 export function createKoaMiddleware(
-  appId: string,
+  applicationName: string,
   licenseKey: string,
-  orgId: string,
+  organizationId: string,
   logger: Logger,
 ) {
-  const middleware = createLicenseMiddleware(appId, licenseKey, orgId, logger);
+  const middleware = createLicenseMiddleware(applicationName, licenseKey, organizationId, logger);
   return middleware.koa();
 }

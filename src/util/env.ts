@@ -6,33 +6,33 @@ import { HTTP_CONSTANTS } from '../constant/http';
 export class Utils {
   // License-specific utilities remain here
   static generateFingerprint(
-    appId: string,
+    applicationName: string,
     licenseKey: string,
-    orgId: string,
+    organizationId: string,
   ): string {
-    const combined = `${appId}:${licenseKey}:${orgId}`;
+    const combined = `${applicationName}:${licenseKey}:${organizationId}`;
     return createHash('sha256').update(combined).digest('hex');
   }
 
   static logLicenseStatus(
     logger: Logger,
     result: ValidationResult,
-    appId: string,
+    applicationName: string,
   ): void {
     if (!result.valid) {
-      logger.error(`License validation failed for application: ${appId}`);
+      logger.error(`License validation failed for application: ${applicationName}`);
       return;
     }
 
-    logger.info(`License validation successful for application: ${appId}`);
+    logger.info(`License validation successful for application: ${applicationName}`);
 
     if (result.isTrial) {
-      logger.warn(`Application ${appId} is running on a trial license`);
+      logger.warn(`Application ${applicationName} is running on a trial license`);
     }
 
     if (result.activeGracePeriod) {
       logger.warn(
-        `Application ${appId} is in grace period - license expired but still functional`,
+        `Application ${applicationName} is in grace period - license expired but still functional`,
       );
     }
 
@@ -43,28 +43,28 @@ export class Utils {
         )
       ) {
         logger.warn(
-          `License for ${appId} expires in ${result.expiryDaysLeft} days`,
+          `License for ${applicationName} expires in ${result.expiryDaysLeft} days`,
         );
       } else if (result.expiryDaysLeft > 0) {
         logger.info(
-          `License for ${appId} expires in ${result.expiryDaysLeft} days`,
+          `License for ${applicationName} expires in ${result.expiryDaysLeft} days`,
         );
       }
     }
   }
 
   static validateConfig(
-    appId: string,
+    applicationName: string,
     licenseKey: string,
-    orgId: string,
+    organizationId: string,
   ): void {
-    if (!appId || typeof appId !== 'string') {
+    if (!applicationName || typeof applicationName !== 'string') {
       throw new Error('Application ID must be a non-empty string');
     }
     if (!licenseKey || typeof licenseKey !== 'string') {
       throw new Error('License key must be a non-empty string');
     }
-    if (!orgId || typeof orgId !== 'string') {
+    if (!organizationId || typeof organizationId !== 'string') {
       throw new Error('Organization ID must be a non-empty string');
     }
   }
