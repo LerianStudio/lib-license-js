@@ -1,3 +1,18 @@
+## [v1.1.0-beta.4] - 2025-07-04
+
+This release focuses on enhancing the codebase's readability and maintainability, ensuring a smoother development experience for contributors and improving the project's documentation.
+
+### 🔄 Changes
+- **Improved Code Readability**: We have refactored variable names across the configuration, frontend, and test components. This enhancement makes the code easier to read and maintain, facilitating future development and reducing the potential for errors.
+
+### 📚 Documentation
+- **Updated Changelog**: The changelog has been updated to accurately reflect recent changes and improvements. This ensures that both users and developers have access to the latest information about the project's evolution, making it easier to track modifications over time.
+
+### 🔧 Maintenance
+- **Code Quality Improvements**: By refining the internal structure of the code, we have laid the groundwork for a more robust and maintainable codebase. While these changes do not directly impact end-user functionality, they contribute significantly to the project's long-term health and efficiency.
+
+This update does not introduce any breaking changes or new features but focuses on strengthening the foundation for future enhancements.
+
 ## [v1.1.0-beta.3] - 2025-07-03
 
 This release brings clarity and consistency to the library's identity, enhancing user experience and ensuring up-to-date documentation.
